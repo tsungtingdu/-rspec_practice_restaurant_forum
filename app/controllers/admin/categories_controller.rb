@@ -5,8 +5,14 @@ class Admin::CategoriesController < ApplicationController
   # 這裡我們只使用index 這個 template，所以統一 render or redirect 到 index
 
   def index
-    @category = Category.new
     @categories = Category.all
+
+    # 這裡是new or edit 的form所需要的值，如果有url有id就將form帶入edit，沒有就new。
+    if params[:id]
+      @category = Category.find(params[:id])
+    else
+      @category = Category.new
+    end
   end
 
   def create
@@ -18,6 +24,17 @@ class Admin::CategoriesController < ApplicationController
      @categories = Category.all
      render :index
    end
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice] = "category was successfully updated"
+      redirect_to admin_categories_path
+    else
+      @categories = Category.all
+      render :index
+    end
   end
 
   private
