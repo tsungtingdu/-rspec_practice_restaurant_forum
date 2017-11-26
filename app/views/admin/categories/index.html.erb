@@ -6,6 +6,16 @@
     <%= link_to 'Categories', admin_categories_path %>
   </div>
   <br>
+  <div class="form-inline" >
+    <!-- [:admin, @category] :admin 是 namespace 的路徑。 -->
+    <%= form_for [:admin, @category] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
+      </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <br>
 
   <div class="row">
 
