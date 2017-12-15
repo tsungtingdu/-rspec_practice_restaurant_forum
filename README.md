@@ -3,7 +3,7 @@
 ## Usage
 
 ### Heroku
-- 後台入口：https://restaurant-forum-2.herokuapp.com/admin/
+- 後台入口：https://restaurant-forum-2.herokuapp.com/
 - 可使用 root@example.com 登入，密碼 12345678
 
 ### Git Clone 步驟
@@ -13,7 +13,9 @@ $ git clone https://github.com/ALPHACamp/restaurant-forum-2.git
 $ bundle install
 $ rails db:migrate
 $ rails db:seed
-$ rails dev:fake
+$ rails dev:fake_restaurant
+$ rails dev:fake_user
+$ rails dev:fake_comment
 ```
 
 ## User stories
