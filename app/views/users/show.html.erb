@@ -19,12 +19,21 @@
             <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
           <% end %>
         </div>
+
         <div class="clearfix"></div>
 
       </div>
 
       <br>
 
+      <div>
+        <!-- 顯示已評論餐廳的清單 -->
+        <div>
+          <% @commented_restaurants.each do |restaurant| %>
+            <h5><%= restaurant.name %></h5>
+          <% end %>
+        </div>
+      </div>
 
 
     </div>
