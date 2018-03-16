@@ -7,6 +7,11 @@
     <div class="col-md-12">
 
       <div>
+        <%= link_to 'Restaurant', admin_restaurants_path %> |
+        <%= link_to 'Categories', admin_categories_path %>
+      </div>
+      <br>
+      <div>
         <%= link_to 'New Restaurant', new_admin_restaurant_path, class: "btn btn-primary" %>
       </div>
       <br>
@@ -14,6 +19,7 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>Category</th>
             <th>Name</th>
             <th>#</th>
           </tr>
@@ -22,6 +28,7 @@
           <% @restaurants.each do |restaurant| %>
           <tr>
             <th scope="row"><%= restaurant.id %></th>
+            <td>[<%= restaurant.category.name %>]</td>
             <td><%= restaurant.name %></td>
             <td>
               <%= link_to 'Show', admin_restaurant_path(restaurant) %>
