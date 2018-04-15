@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       post :favorite
       post :unfavorite
     end
+
+    collection do
+      get :about
+    end
   end
 
   resources :users, only: [:index, :show, :edit, :update]
